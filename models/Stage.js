@@ -4,7 +4,11 @@ var Stage = {
 
     getAllStages:function(callback){
 
-        return db.query("Select * from stage",callback);
+        return db.query(
+            "SELECT * FROM stage " +
+            "INNER JOIN stage_type ON stage.id_stage_type = stage_type.id",
+            callback
+        );
 
     },
 
