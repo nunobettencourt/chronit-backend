@@ -34,4 +34,24 @@ router.get('/:id?',function(req,res,next){
     }
 });
 
+router.get('/members/:id?',function(req,res,next){
+
+    if(req.params.id){
+
+        Team.getTeamMembers(req.params.id,function(err,rows){
+
+            if(err)
+            {
+                res.json(err);
+            }
+            else{
+                res.json(rows);
+            }
+        });
+    }
+    else{
+        res.json('Team ID required');
+    }
+});
+
 module.exports=router;
