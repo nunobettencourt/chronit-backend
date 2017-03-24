@@ -6,24 +6,24 @@ var Stage = {
 
         return db.query(
             "SELECT " +
-            "id, " +
+            "stage.id AS stage_id, " +
             "identifier, " +
             "reference, " +
             "pe_number, " +
-            "title AS stage_title, " +
-            "description " +
-            "distance " +
-            "average_speed " +
-            "time " +
-            "time_start " +
-            "time_end " +
-            "status " +
-            "stage_type.short AS stage_type_short " +
-            "stage_type.title AS stage_type_tile " +
-            "stage_category.short AS stage_category_short " +
+            "stage.title AS stage_title, " +
+            "stage.description AS stage_description, " +
+            "distance, " +
+            "average_speed, " +
+            "time, " +
+            "time_start, " +
+            "time_end, " +
+            "stage.status as stage_status, " +
+            "stage_type.short AS stage_type_short, " +
+            "stage_type.title AS stage_type_tile, " +
+            "stage_category.short AS stage_category_short, " +
             "stage_category.title AS stage_category_title " +
             "FROM stage " +
-            "INNER JOIN stage_type ON stage.id_stage_type = stage_type.id" +
+            "INNER JOIN stage_type ON stage.id_stage_type = stage_type.id " +
             "INNER JOIN stage_category ON stage_type.id_stage_category = stage_category.id",
             callback
         );
