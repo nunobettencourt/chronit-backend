@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var events = require('./routes/Events');
 var competitions = require('./routes/Competitions');
-var students = require('./routes/Students');
+var stages = require('./routes/Stages');
 
 var app = express();
 
@@ -20,15 +20,14 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: false }));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static('/uploads/'));
 
-/*app.use('/resources',express.static(__dirname + '/images'));
-So now, you can use http://localhost:5000/resources/myImage.jpg to serve all the images instead of http://localhost:5000/images/myImage.jpg. */
+
 app.use('/', routes);
 app.use('/users', users);
-app.use('/students',students);
 app.use('/events', events);
 app.use('/competitions', competitions);
+app.use('/stages', stages);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
