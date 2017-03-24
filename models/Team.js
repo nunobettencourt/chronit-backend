@@ -19,12 +19,12 @@ var Team = {
             "SELECT " +
             "person.id AS person_id, " +
             "person.name As person_name, " +
-            "team_member_role.title as team_role" +
+            "team_member_role.title as team_role " +
             "FROM team_member " +
             "INNER JOIN person ON team_member.id_person = person.id " +
             "INNER JOIN team_member_role ON team_member.id_team_member_role = team_member_role.id " +
             "WHERE person.status = 5 " +
-            "AND team.id = ?", [id],
+            "AND team_member.id_team = ?", [id],
             callback
         );
     },
