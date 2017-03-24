@@ -1,0 +1,18 @@
+{
+  "name": "mysql-backend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.1",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "file-system": "^2.2.2",
+    "morgan": "~1.7.0",
+    "mysql": "^2.11.1"
+  }
+}
