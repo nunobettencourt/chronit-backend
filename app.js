@@ -26,7 +26,7 @@ app.use('/', routes);
 app.use('/events', events);
 app.use('/competitions', competitions);
 app.use('/stages', stages);
-app.use('teams', teams);
+app.use('/teams', teams);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
