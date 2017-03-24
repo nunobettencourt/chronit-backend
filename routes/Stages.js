@@ -1,7 +1,6 @@
 var express = require('express');
-var router = express.router;
+var router = express.Router();
 var Stage = require('../models/Stage');
-
 
 router.get('/:id?',function(req,res,next){
 
@@ -89,5 +88,4 @@ router.put('/:id',function(req,res,next){
         }
     });
 });
-
 module.exports=router;

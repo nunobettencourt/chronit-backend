@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var events = require('./routes/Events');
 var competitions = require('./routes/Competitions');
 var stages = require('./routes/Stages');
@@ -23,7 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/events', events);
 app.use('/competitions', competitions);
 app.use('/stages', stages);
